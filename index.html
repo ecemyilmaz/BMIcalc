@@ -13,40 +13,60 @@
 
 <body>
 
-  <form action="process.php">
-    <!-- NAME -->
-    <div>
-      <label for="name">Your Name</label><br>
-      <input type="text" name="name" id="name" placeholder="Put your name here">
+
+  <div class="container">
+    <div class="card">
+      <div class="card-header text-center"> BMI Calculator </div>
+      <div class="card-body">
+        <form action="process.php" class="w-50 m-auto">
+          <div class="form-group">
+            <!-- NAME -->
+            <div class="form-group">
+              <label for="name">Your Name</label><br>
+              <input type="text" name="name" id="name" placeholder="Put your name here" class="form-control">
+            </div>
+            <!-- WEIGHT -->
+            <div class="form-group">
+              <label for="weight">Your Weight</label><br>
+              <input type="number" name="weight" id="weight" class="form-control"
+                placeholder="Your weight in kilograms">
+            </div>
+            <!-- HEIGHT -->
+            <div class="form-group">
+              <label for="height">Your Height</label><br>
+              <input type="number" name="height" id="height" class="form-control" placeholder="Your weight in meters">
+            </div>
+            <!-- GENDER -->
+            <div class="form-group">
+              <label for="gender">Your Gender</label>
+              <select name="gender" id="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <!-- BIRTHDATE -->
+            <div class="form-group">
+              <label for="birthdate">Birthdate</label>
+              <input type="date" name="birthdate" id="birthdate" class="form-control">
+            </div>
+            <!-- SUBMIT and RESET buttons -->
+            <button type="submit" class="btn btn-success" onclick="getBmiValue()">Submit</button>
+            <button type="reset" class="btn btn-secondary">Reset</button>
+            <!-- BMI Value -->
+            <div class="form-group text-center">
+              <label for="bmi_value">Your BMI Value is:</label><br>
+              <input type="number" name="bmi_value" id="bmi_value" class="form-control">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="card-footer text-center">A healthy BMI ranges between 19 and 25 units.</div>
     </div>
-    <!-- WEIGHT -->
-    <div>
-      <label for="weight">Your Weight</label><br>
-      <input type="number" name="weight" id="weight">
-    </div>
-    <!-- HEIGHT -->
-    <div>
-      <label for="height">Your Height</label><br>
-      <input type="number" name="height" id="height">
-    </div>
-    <!-- GENDER -->
-    <div>
-      <label for="gender">Your Gender</label>
-      <select name="gender" id="gender">
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-        <option value="other">Other</option>
-      </select>
-    </div>
-    <!-- BIRTHDATE -->
-    <div>
-      <label for="birthdate">Birthdate</label>
-      <input type="date" name="birthdate" id="birthdate">
-    </div>
-    <!-- SUBMIT and RESET buttons -->
-    <button type="submit">Submit</button>
-    <button type="reset">Reset</button>
-  </form>
+  </div>
+
+
+
 
 
 
