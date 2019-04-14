@@ -13,16 +13,15 @@
 </head>
 
 <body>
-
-
   <div class="container">
     <div class="card">
-      <div class="card-header text-center"> BMI Calculator </div>
+      <div class="card-header text-center">
+        <strong>BMI Calculator</strong>
+      </div>
       <div class="card-body">
         <form class="w-50 m-auto">
           <div class="form-group">
             <!-- NAME -->
-
             <div class="form-group">
               <label for="name">Your Name</label><br>
               <input type="text" name="name" id="name" placeholder="Put your name here" class="form-control">
@@ -75,20 +74,134 @@
       </div>
       <div class="card-footer text-center">A healthy BMI ranges between 19 and 25 units.</div>
     </div>
+    <div class="card">
+      <div class="row">
+        <div class="col-xs-8 col-sm-6">
+          <h1><span class="label label-default centered">BMI Level Indicator </span></h1>
+          <div class="panBMI Level Indicatorel panel-default">
+            <table class="table">
+              <tr>
+                <th>Category</th>
+                <th>From</th>
+                <th>To</th>
+              </tr>
+
+              <tr>
+                <td>Very severely underweight</td>
+                <td></td>
+                <td>15.0</td>
+              </tr>
+
+              <tr>
+                <td>Severely underweight</td>
+                <td>15</td>
+                <td>16</td>
+              </tr>
+
+              <tr class=>
+                <td>Underweight</td>
+                <td>16</td>
+                <td>18.5</td>
+              </tr>
+
+              <tr class=>
+                <td>Normal (healthy weight)</td>
+                <td>18.5</td>
+                <td>25</td>
+              </tr>
+
+              <tr class=>
+                <td>Overweight</td>
+                <td>25</td>
+                <td>30</td>
+              </tr>
+
+              <tr class=>
+                <td>Obese Class I (Moderately obese)</td>
+                <td>30</td>
+                <td>35</td>
+              </tr>
+
+              <tr class=>
+                <td>
+                  Obese Class II (Severely obese)</td>
+                <td>35</td>
+                <td>40</td>
+              </tr>
+
+              <tr class=>
+                <td>Obese Class III (Very severely obese)</td>
+                <td>40</td>
+                <td></td>
+              </tr>
+
+            </table>
+          </div>
+        </div>
+        <!--PERCENTAGE OF BODY FAT -->
+        <div>
+          <h1><span class="label label-default centered">Body Fat Percentage</span></h1>
+          <form name="fform">
+            <!-- AGE -->
+            <div class="form-group">
+              <label for="name">Your Age in years</label><br>
+              <input type="text" class="form-control" onkeyup="check()" name="age" aria-describedby="basic-addon1">
+            </div>
+            <!-- GENDER -->
+            <div class="row">
+              <fieldset class="form-group">
+                <div><b class="size">Gender</b></div>
+                <div class="col-xs-6 col-md-4">
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input" name="optionsRadios" id="male" onkeyup="check()"
+                        value="option1" checked> Male
+                    </label>
+                  </div>
+                </div>
+                <div class="col-xs-6 col-md-4">
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input" name="optionsRadios" onkeyup="check()" id="female"
+                        value="option2"> Female
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+            <!-- BMI value for Percentage of Body Fat -->
+            <div class="row">
+              <!-- <div class="col-sm-16"> -->
+              <div class="form-group">
+                <label id="basic-addon1" onkeyup="check()">BMI</label> <br>
+                <input type="text" class="form-control" name="bmi" onkeyup="check()" aria-describedby="basic-addon1">
+              </div>
+              <!-- </div> -->
+            </div>
+            <!-- FAT % -->
+            <div class="row">
+              <div class="col-sm-16">
+                <div class="form-group">
+                  <span id="basic-addon1">Your Fat % is </span>
+                  <input type="text" class="form-control" id="fat" aria-describedby="basic-addon1">
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+
+
+      </div><!-- End of row 2 -->
+    </div>
+
   </div>
 
 
 
 
 
-  <!-- jQuery library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-  <!-- Popper JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-
-  <!-- Latest compiled JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="app.js"></script>
 </body>
 
