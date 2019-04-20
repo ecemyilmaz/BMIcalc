@@ -14,7 +14,8 @@
   <div class="container">
     <div class="card">
       <div class="card-header text-center">
-        <strong>BMI Calculator</strong>
+        <h1><strong>BMI Calculator</strong></h1>
+
       </div>
       <div class="card-body">
         <form class="w-50 m-auto">
@@ -48,7 +49,7 @@
     <div class="card">
       <div class="row">
         <div class="col-xs-8 col-sm-6">
-          <h1><span class="label label-default centered">BMI Level Value </span></h1>
+          <h2 class="text-center"><span class="label label-default centered">BMI Level Value </span></h2>
           <div class="panBMI Level Indicatorel panel-default">
             <table class="table">
               <tr>
@@ -110,57 +111,57 @@
           </div>
         </div>
         <!--PERCENTAGE OF BODY FAT -->
-        <div>
-          <h1><span class="label label-default centered">Body Fat Percentage</span></h1>
+        <div class="col-xs-8 col-sm-6">
+          <h2 class="text-center"><span class="label label-default centered">Body Fat Percentage</span></h2>
           <form name="fform">
             <!-- AGE -->
             <div class="form-group">
-              <label for="name">Your Age in years</label><br>
+              <label for="name"><b>Your Age in years:</b></label><br>
               <input type="text" class="form-control" onkeyup="check()" name="age" aria-describedby="basic-addon1">
             </div>
             <!-- GENDER -->
-            <div class="row">
-              <fieldset class="form-group">
-                <div><b class="size">Gender</b></div>
-                <div class="col-xs-6 col-md-4">
-                  <div class="form-check">
-                    <label class="form-check-label">
-                      <input type="radio" class="form-check-input" name="optionsRadios" id="male" onkeyup="check()"
-                        value="option1" checked> Male
-                    </label>
-                  </div>
+
+            <fieldset class="form-group">
+              <div><b class="size">Gender:</b></div>
+              <div class="col-xs-6 col-md-4">
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optionsRadios" id="male" onkeyup="check()"
+                      value="option1" checked>Male
+                  </label>
                 </div>
-                <div class="col-xs-6 col-md-4">
-                  <div class="form-check">
-                    <label class="form-check-label">
-                      <input type="radio" class="form-check-input" name="optionsRadios" onkeyup="check()" id="female"
-                        value="option2"> Female
-                    </label>
-                  </div>
+              </div>
+              <div class="col-xs-6 col-md-4">
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="optionsRadios" onkeyup="check()" id="female"
+                      value="option2">Female
+                  </label>
                 </div>
-              </fieldset>
-            </div>
+              </div>
+            </fieldset>
+
             <!-- BMI value for Percentage of Body Fat -->
-            <div class="row">
-              <!-- <div class="col-sm-16"> -->
-              <div class="form-group">
-                <label id="basic-addon1" onkeyup="check()">BMI</label> <br>
-                <input type="text" class="form-control" name="bmi" onkeyup="check()" aria-describedby="basic-addon1">
-              </div>
+
+
+            <div class="form-group text-center">
+              <label id="basic-addon1" onkeyup="check()"><b>BMI</b></label><br>
+              <input type="text" class="form-control" name="bmi" onkeyup="check()" aria-describedby="basic-addon1">
             </div>
+
             <!-- FAT % -->
-            <div class="row">
-              <div class="col-sm-16">
-                <div class="form-group">
-                  <span id="basic-addon1">Your Fat % is </span>
-                  <input type="text" class="form-control" id="fat" aria-describedby="basic-addon1">
-                </div>
-              </div>
+
+
+            <div class="form-group text-center">
+              <span id="basic-addon1"><b>Your Fat % is:</b></span>
+              <input type="text" class="form-control" id="fat" aria-describedby="basic-addon1">
             </div>
-          </form>
         </div>
+
+        </form>
       </div>
     </div>
+  </div>
   </div>
 
   <script src="app.js"></script>
