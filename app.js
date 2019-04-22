@@ -20,6 +20,10 @@ function getBmiValue() {
       'result'
     ).innerHTML = `${name}, your bmi value is : ${result}`;
   }
+  if (result >= 18.5 || result >= 25) {
+    document.getElementById('normal').style.backgroundColor = 'green';
+    document.getElementById('normal').style.color = 'white';
+  }
 }
 
 function check() {
