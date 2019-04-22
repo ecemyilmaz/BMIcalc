@@ -3,9 +3,15 @@ function getBmiValue() {
   const height = Number(document.getElementById('height').value);
   const name = document.getElementById('name').value;
   const result = Math.round(weight / (height * height));
-  document.getElementById(
-    'result'
-  ).innerHTML = `${name}, your bmi value is : ${result}`;
+  if (isNaN(result)) {
+    document.getElementById(
+      'result'
+    ).innerHTML = `Please, enter your name, weight and height`;
+  } else {
+    document.getElementById(
+      'result'
+    ).innerHTML = `${name}, your bmi value is : ${result}`;
+  }
 }
 
 function check() {
