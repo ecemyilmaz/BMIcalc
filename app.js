@@ -1,3 +1,11 @@
+const resetButton = document.getElementById('reset');
+
+resetButton.addEventListener(
+  'click',
+  () =>
+    (document.getElementById('result').innerHTML = 'Here will be your result')
+);
+
 function getBmiValue() {
   const weight = Number(document.getElementById('weight').value);
   const height = Number(document.getElementById('height').value);
