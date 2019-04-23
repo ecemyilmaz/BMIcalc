@@ -1,10 +1,44 @@
+const idObj = {
+  one: document.getElementById('one'),
+  two: document.getElementById('two'),
+  three: document.getElementById('three'),
+  four: document.getElementById('four'),
+  five: document.getElementById('five'),
+  six: document.getElementById('six'),
+  seven: document.getElementById('seven'),
+  eight: document.getElementById('eight'),
+};
+
 const resetButton = document.getElementById('reset');
+// const one = document.getElementById('one');
+// const two = document.getElementById('two');
+// const three = document.getElementById('three');
+// const four = document.getElementById('four');
+// const five = document.getElementById('five');
+// const six = document.getElementById('six');
+// const seven = document.getElementById('seven');
+// const eight = document.getElementById('eight');
+
+function resetLevels() {
+  for (const id in idObj) {
+    idObj.id.style.background = null;
+    idObj.id.style.color = null;
+  }
+}
 
 resetButton.addEventListener(
   'click',
-  () =>
-    (document.getElementById('result').innerHTML = 'Here will be your result')
+  () => (
+    (document.getElementById('result').innerHTML = 'Here will be your result'),
+    (idObj.four.style.background = null),
+    (idObj.four.style.color = null)
+    // ( for(let i = 0; i < idObj; i++) {
+
+    // } )
+  )
 );
+
+resetButton.addEventListener('click', resetLevels());
 
 function getBmiValue() {
   const weight = Number(document.getElementById('weight').value);
@@ -21,8 +55,8 @@ function getBmiValue() {
     ).innerHTML = `${name}, your bmi value is : ${result}`;
   }
   if (result >= 18.5 || result >= 25) {
-    document.getElementById('normal').style.backgroundColor = 'green';
-    document.getElementById('normal').style.color = 'white';
+    idObj.four.style.backgroundColor = 'green';
+    idObj.four.style.color = 'white';
   }
 }
 
