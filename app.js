@@ -1,10 +1,24 @@
 const resetButton = document.getElementById('reset');
+const one = document.getElementById('one');
+const two = document.getElementById('two');
+const three = document.getElementById('three');
+const four = document.getElementById('four');
+const five = document.getElementById('five');
+const six = document.getElementById('six');
+const seven = document.getElementById('seven');
+const eight = document.getElementById('eight');
 
 resetButton.addEventListener(
   'click',
-  () =>
-    (document.getElementById('result').innerHTML = 'Here will be your result')
+  () => (four.style = null),
+  (document.getElementById('result').innerHTML = 'Here will be your result')
 );
+
+// resetButton.addEventListener('click', function reset() {
+//   document.getElementById('result').innerHTML = 'Here will be your result';
+//   // four.style.backgroundColor = null;
+//   four.style = null;
+// });
 
 function getBmiValue() {
   const weight = Number(document.getElementById('weight').value);
@@ -21,8 +35,8 @@ function getBmiValue() {
     ).innerHTML = `${name}, your bmi value is : ${result}`;
   }
   if (result >= 18.5 || result >= 25) {
-    document.getElementById('normal').style.backgroundColor = 'green';
-    document.getElementById('normal').style.color = 'white';
+    document.getElementById('four').style.backgroundColor = 'green';
+    document.getElementById('four').style.color = 'white';
   }
 }
 
