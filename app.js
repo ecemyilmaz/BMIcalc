@@ -1,6 +1,7 @@
 const resetButton = document.getElementById('reset');
 const SUBMIT = document.getElementById('submit');
 const TD = document.getElementsByTagName('td');
+const result = document.getElementById('result');
 const one = document.getElementById('one');
 const two = document.getElementById('two');
 const three = document.getElementById('three');
@@ -21,35 +22,30 @@ resetButton.addEventListener('click', resetColor);
 
 resetButton.addEventListener(
   'click',
-  () =>
-    (document.getElementById('result').innerHTML = 'Here will be your result')
+  () => (result.innerHTML = 'Here will be your result')
 );
 
 function getBmiValue() {
   const weight = Number(document.getElementById('weight').value);
   const height = Number(document.getElementById('height').value);
   const name = document.getElementById('name').value;
-  const result = (weight / (height * height)).toFixed(2);
-  if (isNaN(result) || result === Infinity) {
-    document.getElementById(
-      'result'
-    ).innerHTML = `Please, enter your name, weight and height`;
+  const resultBMI = (weight / (height * height)).toFixed(2);
+  if (isNaN(resultBMI) || resultBMI === Infinity) {
+    result.innerHTML = `Please, enter your name, weight and height`;
   } else {
-    document.getElementById(
-      'result'
-    ).innerHTML = `${name}, your bmi value is : ${result}`;
+    result.innerHTML = `${name}, your bmi value is : ${resultBMI}`;
   }
-  if (result < 16) {
+  if (resultBMI < 16) {
     one.classList.add('one');
-  } else if (result >= 16 && result < 18.5) {
+  } else if (resultBMI >= 16 && resultBMI < 18.5) {
     two.classList.add('two');
-  } else if (result >= 18.5 && result < 25) {
+  } else if (resultBMI >= 18.5 && resultBMI < 25) {
     three.classList.add('three');
-  } else if (result >= 25 && result < 30) {
+  } else if (resultBMI >= 25 && resultBMI < 30) {
     four.classList.add('four');
-  } else if (result >= 30 && result < 35) {
+  } else if (resultBMI >= 30 && resultBMI < 35) {
     five.classList.add('five');
-  } else if (result >= 35) {
+  } else if (resultBMI >= 35) {
     six.classList.add('six');
   }
 }
