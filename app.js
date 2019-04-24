@@ -18,8 +18,6 @@ function resetColor() {
 
 resetButton.addEventListener('click', resetColor);
 
-// SUBMIT.addEventListener('click', resetColor);
-
 resetButton.addEventListener(
   'click',
   () => (result.innerHTML = 'Here will be your result')
