@@ -37,7 +37,7 @@
               <input type="number" name="height" required id="height" class="form-control"
                 placeholder="Your weight in meters">
             </div>
-            <button type="button" class="btn btn-success" onclick="getBmiValue()">Submit</button>
+            <button type="button" id="submit" class="btn btn-success">Submit</button>
             <button type="reset" class="btn btn-secondary" id="reset">Reset</button>
             <!-- BMI Value RESULT -->
             <p class="form-group text-center" id="result">Here will be your result</p>
@@ -51,61 +51,61 @@
         <div class="col-xs-8 col-sm-6">
           <h2 class="text-center"><span class="label label-default centered">BMI Level Value </span></h2>
           <div class="panBMI Level Indicatorel panel-default">
-            <table class="table">
+            <table class="table" id="table">
               <tr>
                 <th>Category</th>
                 <th>From</th>
                 <th>To</th>
               </tr>
 
-              <tr id="one">
+              <!-- <tr id="one">
                 <td>Very severely underweight</td>
                 <td></td>
                 <td>15.0</td>
-              </tr>
+              </tr> -->
 
-              <tr id="two">
+              <tr id="one">
                 <td>Severely underweight</td>
-                <td>15</td>
+                <td></td>
                 <td>16</td>
               </tr>
 
-              <tr id="three">
+              <tr id="two">
                 <td>Underweight</td>
                 <td>16</td>
                 <td>18.5</td>
               </tr>
 
-              <tr id='four'>
+              <tr id="three">
                 <td>Normal (healthy weight)</td>
                 <td>18.5</td>
                 <td>25</td>
               </tr>
 
-              <tr id='five'>
+              <tr id="four">
                 <td>Overweight</td>
                 <td>25</td>
                 <td>30</td>
               </tr>
 
-              <tr id='six'>
+              <tr id='five'>
                 <td>Obese Class I (Moderately obese)</td>
                 <td>30</td>
                 <td>35</td>
               </tr>
 
-              <tr id='seven'>
+              <tr id='six'>
                 <td>
                   Obese Class II (Severely obese)</td>
                 <td>35</td>
-                <td>40</td>
+                <td></td>
               </tr>
-
+              <!-- 
               <tr id="eight">
                 <td>Obese Class III (Very severely obese)</td>
                 <td>40</td>
                 <td></td>
-              </tr>
+              </tr> -->
 
             </table>
           </div>

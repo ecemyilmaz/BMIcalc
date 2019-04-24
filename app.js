@@ -1,17 +1,27 @@
 const resetButton = document.getElementById('reset');
+const SUBMIT = document.getElementById('submit');
+const TD = document.getElementsByTagName('td');
 const one = document.getElementById('one');
 const two = document.getElementById('two');
 const three = document.getElementById('three');
 const four = document.getElementById('four');
 const five = document.getElementById('five');
 const six = document.getElementById('six');
-const seven = document.getElementById('seven');
-const eight = document.getElementById('eight');
+// const seven = document.getElementById('seven');
+// const eight = document.getElementById('eight');
+
+// resetButton.addEventListener('click', () => (four.style = null));
+resetButton.addEventListener('click', function resetColor() {
+  for (const el of TD) {
+    el.style.backgroundColor = 'white';
+    el.style.color = 'black';
+  }
+});
 
 resetButton.addEventListener(
   'click',
-  () => (four.style = null),
-  (document.getElementById('result').innerHTML = 'Here will be your result')
+  () =>
+    (document.getElementById('result').innerHTML = 'Here will be your result')
 );
 
 // resetButton.addEventListener('click', function reset() {
@@ -24,8 +34,8 @@ function getBmiValue() {
   const weight = Number(document.getElementById('weight').value);
   const height = Number(document.getElementById('height').value);
   const name = document.getElementById('name').value;
-  const result = Math.round(weight / (height * height));
-  if (isNaN(result)) {
+  const result = (weight / (height * height)).toFixed(2);
+  if (isNaN(result) || result === Infinity) {
     document.getElementById(
       'result'
     ).innerHTML = `Please, enter your name, weight and height`;
@@ -34,9 +44,22 @@ function getBmiValue() {
       'result'
     ).innerHTML = `${name}, your bmi value is : ${result}`;
   }
-  if (result >= 18.5 || result >= 25) {
-    document.getElementById('four').style.backgroundColor = 'green';
-    document.getElementById('four').style.color = 'white';
+  // if (result >= 18.5 || result >= 25) {
+  //   four.style.backgroundColor = 'green';
+  //   four.style.color = 'white';
+  // }
+  if (result < 16) {
+    one.style.backgroundColor = '#000cff';
+    one.style.color = 'white';
+  } else if (result >= 16 && result < 18.5) {
+    two.style.backgroundColor = '#54a4e5';
+    two.style.color = 'white';
+  } else if (result >= 18.5 && result < 25) {
+    three.style.backgroundColor = '#66d2e2';
+    three.style.color = 'white';
+  } else if (result >= 25 && result < 30) {
+    four.style.backgroundColor = '#54e562';
+    four.style.color = 'white';
   }
 }
 
@@ -54,3 +77,5 @@ function check() {
   }
   document.getElementById('fat').value = fat;
 }
+
+SUBMIT.addEventListener('click', getBmiValue);
