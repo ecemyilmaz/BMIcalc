@@ -1,6 +1,7 @@
 const resetButton = document.getElementById('reset');
 const SUBMIT = document.getElementById('submit');
 const TD = document.getElementsByTagName('td');
+const table = document.getElementById('table');
 const result = document.getElementById('result');
 const one = document.getElementById('one');
 const two = document.getElementById('two');
@@ -9,46 +10,101 @@ const four = document.getElementById('four');
 const five = document.getElementById('five');
 const six = document.getElementById('six');
 
-function resetColor() {
-  for (const el of TD) {
-    el.style.backgroundColor = 'white';
-    el.style.color = 'black';
-  }
+function levelOne() {
+  one.classList.add('one');
+  two.className = '';
+  three.className = '';
+  four.className = '';
+  five.className = '';
+  six.className = '';
 }
 
-resetButton.addEventListener('click', resetColor);
+function levelTwo() {
+  one.className = '';
+  two.classList.add('two');
+  three.className = '';
+  four.className = '';
+  five.className = '';
+  six.className = '';
+}
 
-resetButton.addEventListener(
-  'click',
-  () => (result.innerHTML = 'Here will be your result')
-);
+function levelThree() {
+  one.className = '';
+  two.className = '';
+  three.classList.add('three');
+  four.className = '';
+  five.className = '';
+  six.className = '';
+}
+
+function levelFour() {
+  one.className = '';
+  two.className = '';
+  three.className = '';
+  four.classList.add('four');
+  five.className = '';
+  six.className = '';
+}
+
+function levelFive() {
+  one.className = '';
+  two.className = '';
+  three.className = '';
+  four.className = '';
+  five.classList.add('five');
+  six.className = '';
+}
+
+function levelSix() {
+  one.className = '';
+  two.className = '';
+  three.className = '';
+  four.className = '';
+  five.className = '';
+  six.classList.add('six');
+}
 
 function getBmiValue() {
   const weight = Number(document.getElementById('weight').value);
   const height = Number(document.getElementById('height').value);
   const name = document.getElementById('name').value;
   const resultBMI = (weight / (height * height)).toFixed(2);
+
   if (isNaN(resultBMI) || resultBMI === Infinity) {
     result.innerHTML = `Please, enter your name, weight and height`;
   } else {
     result.innerHTML = `${name}, your bmi value is : ${resultBMI}`;
   }
+  // if (resultBMI < 16) {
+  //   one.classList.add('one');
+  // } else if (resultBMI >= 16 && resultBMI < 18.5) {
+  //   two.classList.add('two');
+  // } else if (resultBMI >= 18.5 && resultBMI < 25) {
+  //   three.classList.add('three');
+  // } else if (resultBMI >= 25 && resultBMI < 30) {
+  //   four.classList.add('four');
+  // } else if (resultBMI >= 30 && resultBMI < 35) {
+  //   five.classList.add('five');
+  // } else if (resultBMI >= 35) {
+  //   six.classList.add('six');
+  // }
   if (resultBMI < 16) {
-    one.classList.add('one');
+    levelOne();
   } else if (resultBMI >= 16 && resultBMI < 18.5) {
-    two.classList.add('two');
+    levelTwo();
   } else if (resultBMI >= 18.5 && resultBMI < 25) {
-    three.classList.add('three');
+    levelThree();
   } else if (resultBMI >= 25 && resultBMI < 30) {
-    four.classList.add('four');
+    levelFour();
   } else if (resultBMI >= 30 && resultBMI < 35) {
-    five.classList.add('five');
+    levelFive();
   } else if (resultBMI >= 35) {
-    six.classList.add('six');
+    levelSix();
   }
 }
 
 function check() {
+  table.className = '';
   const age = document.fform.age.value;
   const bmi = document.fform.bmi.value;
   const gender = parseInt(document.getElementById('male').checked ? 1 : 0);
@@ -64,3 +120,15 @@ function check() {
 }
 
 SUBMIT.addEventListener('click', getBmiValue);
+
+function resetColor() {
+  one.className = '';
+  two.className = '';
+  three.className = '';
+  four.className = '';
+  five.className = '';
+  six.classList = '';
+  result.innerHTML = 'Here will be your result';
+}
+
+resetButton.addEventListener('click', resetColor);
