@@ -104,7 +104,6 @@ function getBmiValue() {
 }
 
 function check() {
-  // table.className = '';
   const age = document.fatform.age.value;
   const bmi = document.fatform.bmi.value;
   const gender = parseInt(document.getElementById('male').checked ? 1 : 0);
