@@ -1,7 +1,7 @@
 const resetButton = document.getElementById('reset');
 const SUBMIT = document.getElementById('submit');
-const TD = document.getElementsByTagName('td');
-const table = document.getElementById('table');
+// const TD = document.getElementsByTagName('td');
+// const table = document.getElementById('table');
 const result = document.getElementById('result');
 const one = document.getElementById('one');
 const two = document.getElementById('two');
@@ -121,6 +121,9 @@ function check() {
 SUBMIT.addEventListener('click', getBmiValue);
 
 function resetColor() {
+  document.fatform.age.value = '';
+  document.fatform.bmi.value = '';
+  document.getElementById('fat').value = '';
   one.className = '';
   two.className = '';
   three.className = '';
