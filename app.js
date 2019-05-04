@@ -75,19 +75,6 @@ function getBmiValue() {
   } else {
     result.innerHTML = `${name}, your bmi value is : ${resultBMI}`;
   }
-  // if (resultBMI < 16) {
-  //   one.classList.add('one');
-  // } else if (resultBMI >= 16 && resultBMI < 18.5) {
-  //   two.classList.add('two');
-  // } else if (resultBMI >= 18.5 && resultBMI < 25) {
-  //   three.classList.add('three');
-  // } else if (resultBMI >= 25 && resultBMI < 30) {
-  //   four.classList.add('four');
-  // } else if (resultBMI >= 30 && resultBMI < 35) {
-  //   five.classList.add('five');
-  // } else if (resultBMI >= 35) {
-  //   six.classList.add('six');
-  // }
   if (resultBMI < 16) {
     levelOne();
   } else if (resultBMI >= 16 && resultBMI < 18.5) {
