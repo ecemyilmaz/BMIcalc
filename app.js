@@ -1,7 +1,5 @@
 const resetButton = document.getElementById('reset');
 const SUBMIT = document.getElementById('submit');
-// const TD = document.getElementsByTagName('td');
-// const table = document.getElementById('table');
 const result = document.getElementById('result');
 const one = document.getElementById('one');
 const two = document.getElementById('two');
