@@ -62,29 +62,42 @@ function levelSix() {
   six.classList.add('six');
 }
 
-function getBmiValue() {
-  const weight = Number(document.getElementById('weight').value);
-  const height = Number(document.getElementById('height').value);
-  const name = document.getElementById('name').value;
-  const resultBMI = (weight / (height * height)).toFixed(2);
+function noStyles() {
+  one.className = '';
+  two.className = '';
+  three.className = '';
+  four.className = '';
+  five.className = '';
+  six.className = '';
+}
 
-  if (isNaN(resultBMI) || resultBMI === Infinity) {
+function getBmiValue() {
+  let weight = Number(document.getElementById('weight').value);
+  let height = Number(document.getElementById('height').value);
+  let name = document.getElementById('name').value;
+  let resultBMI = (weight / (height * height)).toFixed(2);
+
+  if (name == "" || isNaN(resultBMI) || resultBMI == Infinity || resultBMI == 0) {
     result.innerHTML = `Please, enter your name, weight and height`;
+    noStyles();
   } else {
     result.innerHTML = `${name}, your bmi value is : ${resultBMI}`;
+    colorResultBMI();
   }
-  if (resultBMI < 16) {
-    levelOne();
-  } else if (resultBMI >= 16 && resultBMI < 18.5) {
-    levelTwo();
-  } else if (resultBMI >= 18.5 && resultBMI < 25) {
-    levelThree();
-  } else if (resultBMI >= 25 && resultBMI < 30) {
-    levelFour();
-  } else if (resultBMI >= 30 && resultBMI < 35) {
-    levelFive();
-  } else if (resultBMI >= 35) {
-    levelSix();
+  function colorResultBMI(){
+    if (resultBMI < 16) {
+      levelOne();
+    } else if (resultBMI >= 16 && resultBMI < 18.5) {
+      levelTwo();
+    } else if (resultBMI >= 18.5 && resultBMI < 25) {
+      levelThree();
+    } else if (resultBMI >= 25 && resultBMI < 30) {
+      levelFour();
+    } else if (resultBMI >= 30 && resultBMI < 35) {
+      levelFive();
+    } else if (resultBMI >= 35) {
+      levelSix();
+    }
   }
 }
 
