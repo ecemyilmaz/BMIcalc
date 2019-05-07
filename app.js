@@ -102,16 +102,15 @@ function getBmiValue() {
 }
 
 function check() {
-  const age = document.fatform.age.value;
-  const bmi = document.fatform.bmi.value;
-  const gender = parseInt(document.getElementById('male').checked ? 1 : 0);
+  let age = document.fatform.age.value;
+  let bmi = document.fatform.bmi.value;
+  let gender = parseInt(document.getElementById('male').checked ? 1 : 0);
   let fat;
 
   if (age <= 15) {
     fat = Math.round((1.51 * bmi - 0.7 * age - 3.6 * gender + 1.4) * 100) / 100;
   } else {
-    fat =
-      Math.round((1.2 * bmi + 0.23 * age - 10.8 * gender - 5.4) * 100) / 100;
+    fat = Math.round((1.2 * bmi + 0.23 * age - 10.8 * gender - 5.4) * 100) / 100;
   }
   document.getElementById('fat').value = fat;
 }
